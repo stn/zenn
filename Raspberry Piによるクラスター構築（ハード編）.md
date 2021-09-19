@@ -71,4 +71,5 @@ ip a
 
 あとはクラスターに組み込むだけです。ファンLEDは電流がぎりぎり（実は少し足りていない）ため接続しませんでした。光って見えるのは本体のLEDです。
 
-![Raspberry Pi Cluster](./image/img2021-09-19-22-56-30.png)
+![](./image/RaspberryPi4Cluster1.jpg)
+![](./image/RaspberryPi4Cluster2.jpg)
