@@ -17,7 +17,7 @@ published: true # 公開設定（falseにすると下書き）
 - GeekPi Raspberry Pi クラスターケース ZP-0088 x 1
 - TP-Linkスイッチングハブ TL-SG1005P x 1
 - DSLRKIT Power Over Ethernet PoE HAT for Raspberry Pi 4B 3B+ 5V 2.5A x 1
-- UCTRONICS PoE HAT for Raspberry Pi 4 x 1
+- UCTRONICS PoE HAT for Raspberry Pi 4 x 3
 - Elecom LANケーブル CAT6 15cm LD-GPY/BU015 x 4
 - Archgon NVMe PCIe M.2 SSD 外付けケース USB3.1Gen2 MSD-221 x 4
 - Samsung MZ-V8V500B/EC (500GB M.2) x 3 (タイムセールで3つまでしか買えませんでした)
