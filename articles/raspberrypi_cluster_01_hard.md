@@ -1,8 +1,15 @@
+---
+title: "Raspberry Piによるクラスター構築（ハード編）" # 記事のタイトル
+emoji: "🍓" # アイキャッチとして使われる絵文字（1文字だけ）
+type: "tech" # tech: 技術記事 / idea: アイデア記事
+topics: ["RaspberryPi"] # タグ。["markdown", "rust", "aws"]のように指定する
+published: false # 公開設定（falseにすると下書き）
+---
 # Raspberry Piによるクラスター構築（ハード編）
 
-おなじみの取り組みですが、自分用の忘備録として残しておく。
+おなじみの取り組みだが、自分用の忘備録として残しておく。
 
-ハードウェア構成として参考にしたのが「[Raspberry Pi 4Bで4台構成の自宅クラスター！ ラズパイ4B向けPoE HATを試す](https://internet.watch.impress.co.jp/docs/column/shimizu/1325054.html)」の記事です。
+ハードウェア構成として「[Raspberry Pi 4Bで4台構成の自宅クラスター！ ラズパイ4B向けPoE HATを試す](https://internet.watch.impress.co.jp/docs/column/shimizu/1325054.html)」の記事を参考にさせてもらった。
 
 お買物リスト
 - Raspberry Pi 4B x 4
@@ -17,12 +24,12 @@
 - Crucial CT500P2SSD8JP (500GB M.2) x 1
 - JulyTek USB Type C (USB C to A 13.7cm) x 4
 
-SSDはお好みでどうぞ。SSDの仕様の違いで使用できるケースが変わりますので注意してください。
+SSDはお好みで。SSDの仕様の違いで使用できるケースが変わるので注意。
 
 ## クラスターケースに組み込む前にやっておくこと。
 
 Raspberry Piをクラスターケースに組み込むとmicroSDへのアクセスが難しくなるため、Rasberry PiをUSB起動するように設定する。
-全面からアクセスするためのボードも付随しますが本体の右側を使います。右側にSSDドライブを置きたいため、使用しませんでした。左側はUSBなどの端子があるため塞ぎたくないんですよね。
+全面からアクセスするためのボードも付随しますが本体の右側にはSSDドライブを置きたいため、使用しなかった。
 
 microSDにRasberry Pi OS Liteをインストールし、ログイン（userはpi, パスワードはraspberry）。
 
@@ -34,7 +41,7 @@ sudo rasp-config
 
 Advanced Options -> Boot Order -> USB Boot
 
-あと、GPUメモリを16MBにしておくとよいという情報もあるが、後でUbuntuに入れ直すので、これは不要かな（この設定はBIOSじゃないよね）
+あと、GPUメモリを16MBにしておくとよいという情報もあるが、後でUbuntuに入れ直すので、これは不要かなと思いつつも一応（この設定はBIOSじゃないよね）
 
 Performance Options -> GPU Memory
 
@@ -45,7 +52,7 @@ Rasberry Pi OSは32-bitなので、64-bitのあるUbuntuをSSDドライブにイ
 MacにてRaspberry Pi Imagerを起動し、Ubuntu Serverをインストール。
 Other general purpose OS -> Ubuntu -> Ubuntu Server 21.04 (RPi 3/4/400)
 
-（Ubuntu Server 20.04.2 LTSは起動しなかった。）
+> Ubuntu Server 20.04.2 LTSは起動しなかった。
 
 Raspberry PiのUSBにSSDドライブを接続し、起動。
 
@@ -53,11 +60,13 @@ Raspberry PiのUSBにSSDドライブを接続し、起動。
 
 ログイン後、すぐにパスワードの変更が求められる。
 
-その他にはホスト名の設定を行っています。
+その他にはホスト名の設定を行っている。
 
 ```
 hostnamectl set-hostname rasp1
 ```
+
+> LANケーブルを赤、青、黄色、緑と4色用意して、マシン名をred, blue, ...をしている海外記事を見かけたでのやってみたかったが４色の短いLANケーブルが見つからなかった。
 
 あと、MACアドレスを確認し、DHCP serverに登録する。
 
@@ -65,11 +74,16 @@ hostnamectl set-hostname rasp1
 ip a
 ```
 
-これを4台分、繰り返します。
+これを4台分、繰り返す。
 
 ## クラスターケースに組み込み。
 
-あとはクラスターに組み込むだけです。ファンLEDは電流がぎりぎり（実は少し足りていない）ため接続しませんでした。光って見えるのは本体のLEDです。
+あとはクラスターに組み込むだけ。
+ファンLEDは電流がぎりぎりな（実は少し足りていない）ため一度は光らせたものの外しておく。
+電源ケーブルの配線が不要ですっきりとしたクラスターが構築できました。
 
-![](./image/RaspberryPi4Cluster1.jpg)
-![](./image/RaspberryPi4Cluster2.jpg)
+![](/images/articles/RaspberryPi4Cluster2.jpg)
+
+## 参考
+
+- [Upgrade your Raspberry Pi 4 with a NVMe boot drive](https://alexellisuk.medium.com/upgrade-your-raspberry-pi-4-with-a-nvme-boot-drive-d9ab4e8aa3c2) - NVMeにすると速くなるという話
