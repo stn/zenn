@@ -3,7 +3,7 @@ title: "Raspberry Piによるクラスター構築（Ansible + k3s編）" # 記�
 emoji: "🍓" # アイキャッチとして使われる絵文字（1文字だけ）
 type: "tech" # tech: 技術記事 / idea: アイデア記事
 topics: ["raspberrypi", "ansible", "kubernetes", "k3s"] # タグ。["markdown", "rust", "aws"]のように指定する
-published: false # 公開設定（falseにすると下書き）
+published: true # 公開設定（falseにすると下書き）
 ---
 「[Raspberry Piによるクラスター構築（ハード編）](https://zenn.dev/akrisn/articles/raspberrypi_cluster_01_hard)」の続き。
 
@@ -57,7 +57,7 @@ $ pssh -h ./hosts -i sudo shutdown -h now
 
 [k3s](https://rancher.com/products/k3s/)はRancher社による軽量なKubernetesです。
 
-1台のマシンにインストールするだけなら、スクリプトを用いればいいが、クラスターだとノードの登録などの作業が必要となる。これらを手作業で行うと間違いもおきるため、Ansibleを用いる。
+1台のマシンにインストールするだけなら、スクリプトを用いればいいが、クラスターだとノードの登録などの作業が必要となる。これらを手作業で行うと間違いも起きるためAnsibleを用いる。
 
 k3s公式に[k3s-ansible](https://github.com/k3s-io/k3s-ansible)が提供されているので、それを用いる。
 
@@ -65,7 +65,7 @@ k3s公式に[k3s-ansible](https://github.com/k3s-io/k3s-ansible)が提供され�
 git clone https://github.com/k3s-io/k3s-ansible.git
 ```
 
-まず、インベントリーをサンプルをコピーし作成する。
+まず、インベントリーを作成する。
 
 ```bash
 cp -R inventory/sample invenvtory/my-cluster
