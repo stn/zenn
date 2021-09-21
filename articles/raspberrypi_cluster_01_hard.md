@@ -2,12 +2,12 @@
 title: "Raspberry Piによるクラスター構築（ハード編）" # 記事のタイトル
 emoji: "🍓" # アイキャッチとして使われる絵文字（1文字だけ）
 type: "tech" # tech: 技術記事 / idea: アイデア記事
-topics: ["RaspberryPi"] # タグ。["markdown", "rust", "aws"]のように指定する
+topics: ["raspberrypi"] # タグ。["markdown", "rust", "aws"]のように指定する
 published: true # 公開設定（falseにすると下書き）
 ---
-# Raspberry Piによるクラスター構築（ハード編）
-
 おなじみの取り組みだが、自分用の忘備録として残しておく。
+
+## ハードウェア構成
 
 ハードウェア構成として「[Raspberry Pi 4Bで4台構成の自宅クラスター！ ラズパイ4B向けPoE HATを試す](https://internet.watch.impress.co.jp/docs/column/shimizu/1325054.html)」の記事を参考にさせてもらった。
 
@@ -20,7 +20,7 @@ published: true # 公開設定（falseにすると下書き）
 - UCTRONICS PoE HAT for Raspberry Pi 4 x 3
 - Elecom LANケーブル CAT6 15cm LD-GPY/BU015 x 4
 - Archgon NVMe PCIe M.2 SSD 外付けケース USB3.1Gen2 MSD-221 x 4
-- Samsung MZ-V8V500B/EC (500GB M.2) x 3 (タイムセールで3つまでしか買えませんでした)
+- Samsung MZ-V8V500B/EC (500GB M.2) x 3 (タイムセールで3つまでしか購入できませんでした)
 - Crucial CT500P2SSD8JP (500GB M.2) x 1
 - JulyTek USB Type C (USB C to A 13.7cm) x 4
 
