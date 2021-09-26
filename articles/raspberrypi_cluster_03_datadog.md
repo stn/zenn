@@ -3,7 +3,7 @@ title: "Raspberry Piによるクラスター構築（DataDog編）" # 記事の�
 emoji: "🍓" # アイキャッチとして使われる絵文字（1文字だけ）
 type: "tech" # tech: 技術記事 / idea: アイデア記事
 topics: ["raspberrypi", "ansible", "datadog"] # タグ。["markdown", "rust", "aws"]のように指定する
-published: false # 公開設定（falseにすると下書き）
+published: true # 公開設定（falseにすると下書き）
 ---
 「[Raspberry Piによるクラスター構築（Ansible + k3s編）](https://zenn.dev/akrisn/articles/raspberrypi_cluster_02_ansible)」の続き。
 

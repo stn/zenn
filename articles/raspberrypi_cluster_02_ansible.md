@@ -391,3 +391,7 @@ rasp4   174m         4%     333Mi           4%
 ```bash
 ansible-playbook reset.yml
 ```
+
+## 次回
+
+「[Raspberry Piによるクラスター構築（DataDog編）](https://zenn.dev/akrisn/articles/raspberrypi_cluster_03_datadog)」に続く

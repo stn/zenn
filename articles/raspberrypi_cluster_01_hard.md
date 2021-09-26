@@ -84,6 +84,10 @@ ip a
 
 ![](/images/articles/RaspberryPi4Cluster2.jpg)
 
+## 次回
+
+「[Raspberry Piによるクラスター構築（Ansible + k3s編）](https://zenn.dev/akrisn/articles/raspberrypi_cluster_02_ansible)」に続く
+
 ## 参考
 
 - [Upgrade your Raspberry Pi 4 with a NVMe boot drive](https://alexellisuk.medium.com/upgrade-your-raspberry-pi-4-with-a-nvme-boot-drive-d9ab4e8aa3c2) - NVMeにすると速くなるという話
