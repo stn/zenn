@@ -359,7 +359,7 @@ $ meltano state get dev:tap-jquants-to-target-sqlite
 
 ## まとめ
 
-Meltanoを使うと、J-Quants APIからのデータの取得に1行のコードを書くことなくデータを取得し、データベースへと格納し、ステート管理まで行うことができました。
+[Meltano](https://meltano.com/)と[tap-jquants](https://github.com/stn/tap-jquants)を使うと、[J-Quants API](https://jpx.gitbook.io/j-quants-ja/)からのデータの取得に1行のコードを書くことなくデータを取得し、データベースへと格納し、ステート管理まで行うことができました。
 
 しかも、データの格納先に関しては、データベースだけでなく、CSVやS3、BigQueryなど、様々なデータストアに対応しています。
 
