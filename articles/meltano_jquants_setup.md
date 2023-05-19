@@ -7,25 +7,18 @@ published: false
 ---
 このドキュメントでは、Meltanoを用いて、J-Quants APIから[tap-jquants](https://github.com/stn/tap-jquants)を用いてデータを取得する手順を説明します。
 
-[J-Quants API](https://jpx.gitbook.io/j-quants-ja/)が正式リリースされ、個人投資家にはこれまで取得が難しかったデータへのアクセスが容易になりました。
-公式にも[jquants-api-client-python](https://github.com/J-Quants/jquants-api-client-python)をはじめとした[さまざまな言語のクライアント](https://github.com/J-Quants)が公開されています。
+[J-Quants API](https://jpx.gitbook.io/j-quants-ja/)が正式リリースされ、個人投資家にはこれまで取得が難しかったデータへのアクセスが容易になりました。公式にも[jquants-api-client-python](https://github.com/J-Quants/jquants-api-client-python)をはじめとした[さまざまな言語のクライアント](https://github.com/J-Quants)が公開されています。
 
-J-Quants APIを用いると市場全体の分析のために必要なさまざまなデータを取得できます。
-しかし、APIは日々、追加されるデータを含み、毎回、すべてを取得しては時間がかかってしまいます。
-このようなケースではETL/ELTパイプラインを構築し、過去のデータをキャッシュし、新たなデータをインクリメンタルに取得し、分析するという手法が有効です。
+J-Quants APIを用いると市場全体の分析のために必要なさまざまなデータを取得できます。しかし、APIは日々、追加されるデータを含み、毎回、すべてを取得しては時間がかかってしまいます。このようなケースではETL/ELTパイプラインを構築し、過去のデータをキャッシュし、新たなデータをインクリメンタルに取得し、分析するという手法が有効です。
 
-とはいえ、ETL/ELTパイプラインを構築するためには、前回はどこまでのデータが取得されたのか、次回はどこから取得すればよいのかといった情報を管理し、
-取得したデータをデータベースに保存し、更新されたデータに基づいて分析を行うためのコードを書く必要があります。
+とはいえ、ETL/ELTパイプラインを構築するためには、前回はどこまでのデータが取得されたのか、次回はどこから取得すればよいのかといった情報を管理し、取得したデータをデータベースに保存し、更新されたデータに基づいて分析を行うためのコードを書く必要があります。
 
-このようなELTパイプラインを簡単に構築できる[Meltano](https://meltano.com/)というツールがあります。
-Meltanoはさまざまなプラグイン([Meltano Hub](https://hub.meltano.com/))を組み合わせることで、データの抽出 (Extract)、ロード (Load)、変換 (Transform)を行うことができます。
-
+このようなELTパイプラインを簡単に構築できる[Meltano](https://meltano.com/)というツールがあります。Meltanoを使うとさまざまなプラグイン([Meltano Hub](https://hub.meltano.com/))を組み合わせることで、データの抽出 (Extract)、ロード (Load)、変換 (Transform)を行うことができます。
 
 
 ## 前提条件
 
 このドキュメントでは、以下の前提条件を想定しています。
-
 - [J-Quants API](https://jpx-jquants.com/)のアカウントを持っていること。
 - Python 3.7, 3.8, 3.9, 3.10, 3.11のいずれかがインストールされていること。
   - このドキュメントでは、Python 3.9で動作を確認しています。
@@ -93,8 +86,7 @@ ExtractorはELTパイプラインの入り口となる、データを取得す�
 
 ### tap-jquantsのインストール
 
-[tap-jquants](https://github.com/stn/tap-jquants)は現在、開発中でMeltano Hubに登録できていませんので、custom extractorとして設定します。
-将来的には以下のインストールは `meltano add extractor tap-jquants` でインストールできるようになると思います。
+[tap-jquants](https://github.com/stn/tap-jquants)は現在、開発中でMeltano Hubに登録できていませんので、custom extractorとして設定します。将来的には以下のインストールは `meltano add extractor tap-jquants` でインストールできるようにしたいです。
 
 ```bash
 $ cd meltano-jquants
@@ -362,8 +354,7 @@ $ meltano state get dev:tap-jquants-to-target-sqlite
 {"singer_state": {"bookmarks": {"daily_quotes": {"replication_key": "date", "replication_key_value": "2023-05-19"}}}}
 ```
 
-最後に取得したデータの`date`の値がステートとして保存されています。
-これによって、再度、`meltano run tap-jquants target-sqlite`を実行しても、最後に取得したデータ以降を取得するようになっています。
+最後に取得したデータの`date`の値がステートとして保存されています。これによって、再度、`meltano run tap-jquants target-sqlite`を実行しても、最後に取得したデータ以降を取得するようになっています。
 
 
 ## まとめ
