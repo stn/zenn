@@ -3,7 +3,7 @@ title: "Meltanoとtap-jquantsを用いたELT"
 emoji: "🐉"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: [meltano,j-quants,elt,etl,finance]
-published: false
+published: true
 ---
 このドキュメントでは、Meltanoを用いて、J-Quants APIから[tap-jquants](https://github.com/stn/tap-jquants)を用いてデータを取得する手順を説明します。
 
