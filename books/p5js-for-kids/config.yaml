@@ -1,0 +1,9 @@
+title: "p5.jsで学ぶプログラミング"
+summary: "p5.jsを使ってプログラミングを学んでいきましょう。"
+topics: [p5.js,kids]
+published: false
+price: 0 # 有料の場合200〜5000
+# 本に含めるチャプターを順番に並べましょう
+chapters:
+  - intro.md
+  - first.md
